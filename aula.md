@@ -3,7 +3,8 @@
 Maneira de  dar  instrução ao computador.
 Como um lego, você irá utilizar peças para criar algoritmos, ou seja, para resolver problemas.
 
-> **Algorimo**: Sequência de lógica e finita para  resolução de um problema.
+## Algoritmo: 
+Sequência de lógica e finita para  resolução de um problema.
 
 ## Peças de uma linguagem
 
@@ -23,17 +24,34 @@ Apresentar os dados
 
 ## Tipos de dados
 
-Strings (textos): "" '' ``
-Number (números): 2 1.4 10
-Function
+- [x] Strings (textos): "" '' ``
+- [x] Number (números): 2 1.4 10
+- [x] Bollean (True/False)
 
 ## Escopo e Variáveis
 
-Variáveis globais e locais
-Constantes
+- [x] Variáveis globais e locais
+- [x] Constantes
 
 ## Operadores 
 
-Operador de atribuição de valor
+- [x] Operador de atribuição de valor =
+- [x] Operador de contatenação +
 
+## Estrutura de dados:
+
+### Arrays:
+
+- [x] Uma lista que contém qualquer tipo de dado
+
+### Objetos:
+
+- [x] Atributos e métodos
+- [x] Criação de manipulação de objetos
+- [x] Acesso a propriedade de objetos
+
+## Functions
+- [x] Criar, passar argumento
+- [x] Executar
+- [x] Arrow function / named function
 
