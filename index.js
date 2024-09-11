@@ -81,7 +81,7 @@ const metasAbertas = async  () => {
     })
 }
 
-const deletarAbertas = async  () => {
+const deletarMetas = async  () => {
     const metasDesmarcadas = metas.map((meta) =>{
     return {value: meta.value, checked: false}
 })
@@ -97,10 +97,11 @@ const deletarAbertas = async  () => {
     }
 
     itensADeletar.forEach((item) => {
-        metas = metas.filter(() => {
-            return meta.value != item
+        metas = metas.filter((meta) => {
+            return meta.value !== item;
         })
     })
+
 
     console.log("Meta(s) deletada(s) com sucesso!")
 
@@ -115,7 +116,7 @@ const start = async () => {
                 { name: "Listar Metas", value: "listar" },
                 { name: "Metas realizadas", value: "realizadas" },
                 { name: "Metas abertas", value: "abertas" },
-                { name: "Deletar abertas", value: "deletar" },
+                { name: "Deletar metas", value: "deletar" },
                 { name: "Sair", value: "sair" }
             ]
         });
@@ -135,7 +136,7 @@ const start = async () => {
                 await metasAbertas() 
                 break
             case "deletar":
-                await metasDeletar()
+                await deletarMetas()
                 break
             case "sair":
                 console.log("Até a próxima!");
