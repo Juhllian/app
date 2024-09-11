@@ -1,40 +1,48 @@
-const { select } = require('@inquirer/prompts') 
+const { select, input } = require('@inquirer/prompts');
 
-    const start = async () => {
-    
-    while(true){
+let meta = {
+    value: 'Tomar 3L de água por dia',
+    checked: false,
+};
 
+let metas = [meta];
+
+const cadastrarMeta = async () => {
+    const meta = await input({ message: "Digite a meta" });
+
+    if (meta.length === 0) {
+        console.log('A meta não pode ser vazia.');
+        return;
+    }
+
+    metas.push({ value: meta, checked: false });
+};
+
+const start = async () => {
+    while (true) {
         const opcao = await select({
-            message: "Menu >",
+            message: "Escolha uma opção",
             choices: [
-                {
-                    name: "Cadastrar meta",
-                    value: "cadastrar"
-                },
-                {
-                    name: "Listar metas",
-                    value: "listar"
-                },
-                {
-                    name: "Sair",
-                    value: "sair"
-                }
+                { name: "Cadastrar Meta", value: "cadastrar" },
+                { name: "Listar Metas", value: "listar" },
+                { name: "Sair", value: "sair" }
             ]
-        })
+        });
 
-
-        switch(opcao) {
+        switch (opcao) {
             case "cadastrar":
-                console.log("vamos cadastrar")
-                break
+                await cadastrarMeta();
+                console.log(metas);
+                break;
             case "listar":
-                console.log("vamos listar")
+                console.log("Metas:");
+                metas.forEach(meta => console.log(meta.value));
+                break;
             case "sair":
-                console.log("Até a próxima!")
-
-                return
+                console.log("Até a próxima!");
+                return;
         }
     }
-}
+};
 
-start()
+start();
